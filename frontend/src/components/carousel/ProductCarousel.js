@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./ProductCarousel.scss";
 import { responsive } from "./data";
+import CarouselItems from "./CarouselItems";
 
 const ProductCarousel = ({ products, deviceType }) => {
   return (
@@ -19,10 +20,12 @@ const ProductCarousel = ({ products, deviceType }) => {
       >
         {products.map(product => (
           <div key={product.id} className="product-item">
-            <img src={product.imageurl} alt={product.name} />
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <p className="price">{product.price}</p>
+            <CarouselItems 
+              url={product.imageurl}
+              name={product.name}
+              price={product.price}
+              description={product.description}
+            />
           </div>
         ))}
       </Carousel>
