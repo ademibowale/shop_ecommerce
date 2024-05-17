@@ -3,10 +3,7 @@ import Slider from "../../components/slider/Slider";
 import "./Home.scss";
 import HomeInfoBox from "./HomeInfoBox";
 import { productData } from "../../components/carousel/data";
-import ProductCarousel from "../../components/carousel/ProductCarousel"; // Assuming Carousel is used within ProductCarousel
-
-// Remove unused import (if not used elsewhere)
-// import { Carousel } from "react-multi-carousel";
+import ProductCarousel from "../../components/carousel/ProductCarousel";
 
 const PageHeading = ({ btnText, heading }) => {
   return (
@@ -20,18 +17,7 @@ const PageHeading = ({ btnText, heading }) => {
   );
 };
 
-const Home = () => {
-  const productItems = productData.map((item, index) => (
-    <div key={item.id}>
-      <carouselItems
-        name={item.name}
-        price={item.price}
-        url={item.imageurl}
-        description={item.description}
-      />
-    </div>
-  ));
-
+const Home = ({ deviceType }) => {
   return (
     <>
       <Slider />
@@ -46,7 +32,7 @@ const Home = () => {
             </div>
             <HomeInfoBox />
             <PageHeading btnText={"View More>>>"} heading={"Latest Products"} />
-            <ProductCarousel products={productItems} />
+            <ProductCarousel products={productData} deviceType={deviceType} />
           </div>
         </div>
       </section>
@@ -55,3 +41,9 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
+
+
