@@ -26,6 +26,7 @@ const categories = [
 
 const Category = ({ title, image }) => {
   const navigate = useNavigate();
+
   return (
     <div className="category">
       <h3>{title}</h3>
@@ -40,13 +41,11 @@ const Category = ({ title, image }) => {
 const ProductCategory = () => {
   return (
     <div className="categories">
-      {categories.map((cat) => {
-        return (
-          <div key={cat.id}>
-            <Category title={cat.title} image={cat.image} />
-          </div>
-        );
-      })}
+      {categories.map((cat) => (
+        <div key={cat.id} className="--flex-center">
+          <Category title={cat.title} image={cat.image} />
+        </div>
+      ))}
     </div>
   );
 };
