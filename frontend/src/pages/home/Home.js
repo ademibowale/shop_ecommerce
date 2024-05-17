@@ -4,6 +4,7 @@ import "./Home.scss";
 import HomeInfoBox from "./HomeInfoBox";
 import { productData } from "../../components/carousel/data";
 import ProductCarousel from "../../components/carousel/ProductCarousel";
+import ProductCategory from "./ProductCategory";
 
 const PageHeading = ({ btnText, heading }) => {
   return (
@@ -21,7 +22,7 @@ const Home = ({ deviceType }) => {
   return (
     <>
       <Slider />
-      <section>
+      <section className="home-section">
         <div className="container">
           <div className="home">
             <div className="home__info">
@@ -36,14 +37,20 @@ const Home = ({ deviceType }) => {
           </div>
         </div>
       </section>
+
+      <section className="--bt-grey">
+        <div className="container">
+         
+              <h3>Categories</h3>
+              <ProductCategory/>
+              <p>
+                Get access to quality products from only tested and proven brands.
+              </p>
+            
+        </div>
+      </section>
     </>
   );
 };
 
 export default Home;
-
-
-
-
-
-
