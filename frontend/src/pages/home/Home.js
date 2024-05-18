@@ -5,6 +5,7 @@ import HomeInfoBox from "./HomeInfoBox";
 import { productData } from "../../components/carousel/data";
 import ProductCarousel from "../../components/carousel/ProductCarousel";
 import ProductCategory from "./ProductCategory";
+import FooterLink from "../../components/footer/FooterLink";
 
 const PageHeading = ({ btnText, heading }) => {
   return (
@@ -49,6 +50,16 @@ const Home = ({ deviceType }) => {
             
         </div>
       </section>
+
+      <section className="home-section">
+        <div className="container">
+        <PageHeading heading={"Mobile Phones"}
+            btnText={"Shop Now >>>"} />
+            <ProductCarousel products={productData} deviceType={deviceType} />
+           </div>
+           </section>
+           <FooterLink />
+           
     </>
   );
 };
